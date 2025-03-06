@@ -130,13 +130,77 @@
                 <i class="fas fa-female text-success"></i> For females, the most affected age range is: <strong><em class="text-danger">{{ female_max_age_range }}</em></strong>
             </li>
             <li class="list-group-item">
-                <i class="fas fa-chart-line text-success"></i> In the next three years, the highest predicted number of affected individuals will be: <strong><em class="text-danger">{{ highest_future_prediction|round(2) }}</em></strong>
+                <i class="fas fa-chart-line text-success"></i> In the next three years,  <b class="text-success fw-bold">{% for year in future_years %}{{ year }}{% if not loop.last %}, {% endif %}{% endfor %} </b> the highest predicted frequency of drug usage is expected to be : <strong><em class="text-danger">{{ highest_future_prediction|round(2) }}</em></strong>
             </li>
             <li class="list-group-item">
                 <i class="fas fa-heartbeat text-success"></i> The lifestyle most contributing to drug use is: <strong><em class="text-danger">{{ most_influential_lifestyle }}</em></strong>
             </li>
         </ul>
         
+
+
+        <div class="row">       
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title">Predicted Drug Usage Frequency by Age Group</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>These predictions estimate how frequently drugs may be used per year across different age groups.</p>
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Age Group</th>
+                                    <th>Expected Frequency (times per year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for age_range, predictions in age_interval_predictions.items() %}
+                                <tr>
+                                    <td><strong>{{ age_range }}</strong></td>
+                                    <td><strong>{{ "%.3f"|format(predictions[0] if predictions is iterable else predictions) }}</strong></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title">Projected Drug Usage Frequency (Years: {% for year in future_years %}{{ year }}{% if not loop.last %}, {% endif %}{% endfor %})</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>These predictions estimate the frequency of drug usage per year in the coming years.</p>
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Expected Frequency (times per year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fas fa-users text-danger"></i> Estimated Total Usage</td>
+                                    <td><strong>{{ "%.3f"|format(future_predictions[0] if future_predictions is iterable else future_predictions) }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-male text-danger"></i> Estimated Male Usage</td>
+                                    <td><strong>{{ "%.3f"|format(future_male_predictions[0] if future_male_predictions is iterable else future_male_predictions) }}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-female text-danger"></i> Estimated Female Usage</td>
+                                    <td><strong>{{ "%.3f"|format(future_female_predictions[0] if future_female_predictions is iterable else future_female_predictions) }}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="row">
             <div class="col-md-4">
@@ -251,14 +315,7 @@
                     </ul>
                 </div>
             </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-              
-            </div>
-        </div>
+        </div>              
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -44,12 +44,24 @@ def index():
         'AcademicPerformance': np.random.randint(0, 100, num_records),
         'LifeSatisfaction': np.random.randint(1, 10, num_records),
         'UrbanRural': np.random.choice(['Urban', 'Rural'], num_records),
-        'LifeStyle': np.random.choice(['Sedentary', 'Active', 'Mixed'], num_records),
+        'LifeStyle': np.random.choice([
+    'Peer pressure',
+    'Stress and mental health issues',
+    'Exposure to drugs at an early age',
+    'Lack of parental supervision or involvement',
+    'Easy access to drugs',
+    'Curiosity and experimentation',
+    'Depression or emotional trauma',
+    'Low socioeconomic status',
+    'Social isolation and loneliness',
+    'Cultural or community norms that accept drug use'
+]
+, num_records),
         'Y': np.random.randint(0, 100, num_records)
     }
 
-    #df = pd.DataFrame(data)
-    df = pd.read_csv("dataset.csv")
+    df = pd.DataFrame(data)
+    #df = pd.read_csv("dataset.csv")
 
     label_encoders = {}
     categorical_cols = ['Gender', 'EducationLevel', 'EmploymentStatus', 'MaritalStatus', 'FamilyHistory',
