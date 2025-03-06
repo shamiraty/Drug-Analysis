@@ -1,47 +1,4 @@
-madawa  ya kulevya
 
-create a dataset with too many columns or variables
-
-1. find r2 or strength of relation to each variable against Y  and in interpretation say " variable_name contribute to Y in the intesity of {{r2}} show them by rank
-2. find which group is most afected  between male and female.   and to each group show which age range is most affected use  use r2 strength
-2. show how each variable its strenght of relation contribution to Y  
-3. predict on the future 3 years  a head  how many individuals will be affected as general.  and show how many male and female will be affected  use predictive model
-4. predict on the future 3 years  a head  show each variable strenght its contribution to Y  r2.  and show as a general use predictive model
-5. show  which life style is most affected use predictive model
-6. also to each age interval example 10-20, 20-30  ,30-40   predict 3 years leter  its streght   here observe upper and lower class boundary  isiathiri analysis
-6. provide  which should be done  as u reseacher  based  on analysis figure
-
-
-use  python  and create so many records  and columns
-
--------------------------------------------------------------------------------------------------
-
-
-
-add the following:
-
-
-
-
-
-katika waathirika waliohojiwa  wa matumizi ya dawa ya kulevya  idadi {{data length}} kutoka kwenye population ya watu 100,000  ambao wastani wa umri wa population nzima ni {{interval sestimation from ?  to ?  use 95% CI or alpha 0.05}}  imegundulika kwamba
-
-
-data za hapa zipo tayari kwa template-:
-
-1. sababu kubwa inayopelekea kutumia madawa ya kulevya ni (Variable Importance) select most high
-2. ambapo kundi kubwa la jinsia lililoathirika ni (Gender Impact) select most high
-3. ambapo kwa wanaume kundi lilioathirika zaidi ni umri kati ya (Age and Gender Impact) na kwa wanawake ni (female) select most high
-4. miaka mitatu mbele yaani {years} idadi kubwa itakuwa ( select most high)
-5. ambapo mtindo wa maisha  unaochangia matumizi ya dawa za kulevya ni (Lifestyle Impact) ( select most high)
-6. miaka mitatu mbele yaani {years} idadi kubwa itakuwa umri kati ya (Age Group Predictions) ambapo idadi itakuwa ( select most high)
-
-
-
-
-username: openfinings
-password: 32491989
-email: shamirisaidiselemani@gmail.com
 
 site: https://openfinings.pythonanywhere.com/
 
