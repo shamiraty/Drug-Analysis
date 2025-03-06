@@ -1,6 +1,8 @@
 ## INTELLIGENT PREDICTION SYSTEM FOR DRUG USE VICTIMS:
 ## PREDICTION, CAUSAL ANALYSIS, AND DEPENDENCY RISK DOCUMENTATION
 
+![7](https://github.com/user-attachments/assets/31424376-cd52-415e-9aea-b1624d30f1b7)
+
 - 📍 **Location**: Dodoma, Tanzania
 - 📧 **Email**: [sashashamsia@gmail.com](mailto:sashashamsia@gmail.com)
 - 📱 **WhatsApp**: [+255675839840](https://wa.me/255675839840)
